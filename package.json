@@ -1,0 +1,17 @@
+{
+  "name": "playwright-library-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1",
+    "playwright": "^1.49.0",
+    "typescript": "^5.7.2"
+  }
+}
