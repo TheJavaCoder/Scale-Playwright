@@ -1,7 +1,8 @@
 # Scaling Playwright Originization Wide.
+
 For a large multi-tenant, multi-deployment app.
-#
-This project is a study on how far you could abstract your tests away from Playwright and talk in more domain specific terms, which make tests faster to write and hopefully less error prone.
+
+This project is a study on how far you could abstract your tests away from Playwright and talk in more domain-specific terms, which make tests faster to write and hopefully less error-prone.
 #
 Basic Example:
 ```typescript
@@ -18,7 +19,7 @@ SPTest("Can login", joeSmith, async (ip) => {
 Advanced Multi-User example:
 
 ```typescript
-// Extention method of Playwright.test
+// Extension method of Playwright.test
 SPTest_Userless("Multiple users login and do stuff?", async ({ browser }) => {
 
     // Login by joeSmith for the AdminPage
@@ -43,18 +44,18 @@ SPTest_Userless("Multiple users login and do stuff?", async ({ browser }) => {
 });
 ```
 
-*Suggest consolidating most of your playwright work into your custom PageBridge and parameterizing your playwright tests all the way to PageBridge methods.*
+*Suggest consolidating most of your Playwright work into your custom PageBridge and parameterizing your Playwright tests all the way to PageBridge methods.*
 
-*Explore using PageBridges to keep current session state. Especially if you have a stateful api model.*
+*Explore using PageBridges to keep current session state, especially if you have a stateful API model.*
 
 #
 
 ### Light Control Surface
 
-Playwright's test run in parallel, tests need a clean known starting point as ground truth.
+Playwright's tests run in parallel, so tests need a clean known starting point as ground truth.
 
-100s if not 1000s of tests that will be written, how could this possiblely work?
+With hundreds, if not thousands, of tests that will be written, how could this possibly work?
 
-The only way to garentee that tests' states don't get squashed, is by creating a new environment for every test to run in with static copies of data.
+The only way to guarantee that tests' states don't get squashed is by creating a new environment for every test to run in with static copies of data.
 
-Using pre and post test hooks, and making api requests to our target machine to spin up and down environments on the test suite's behalf when they're needed all based on the testId.
+Using pre and post-test hooks and making API requests to our target machine to spin up and down environments on the test suite's behalf when they're needed, all based on the testId.
